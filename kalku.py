@@ -36,12 +36,17 @@ def bagi(depan: float, belakang:float):
 def kuis_penjumlahan(level):
     """
     Membuat kuis penjumlahan secara otomatis
-    Level 1, Level 2, Level 3, level 4
+    l1 = 1 digit,
+    l2 = 2 digit
+    l3 = 3 digit
+    l4 = 4 digit
     """
     import random
     l1_depan = random.randint(0, 9)
     l1_belakang = random.randint(0, 9)
-    # l2 = random.randint(10, 99)
+    l2_depan = random.randint(10, 99)
+    l2_belakang = random.randint(10, 99)
+
     # l3 = random.randint(100, 999)
     # l4 = random.randint(1000, 9999)
     while True:
@@ -55,6 +60,23 @@ def kuis_penjumlahan(level):
                 print("Anda keluar")
                 break
             if input_hasil == hasil:
+                print("Jawaban anda benar")
+                return hasil
+            elif input_hasil != hasil:
+                return f"Hasil salah, yang benar {hasil}"
+
+        # Ini perlu diefieisenkan, masa harus nulis blok kode 2 kali
+        elif level == "l2":
+            print("Ketik huruf untuk keluar")
+            print(l2_depan, "+", l2_belakang, "= ?")
+            hasil = l2_depan + l2_belakang
+            try:
+                input_hasil = int(input("Masukkan angka: "))
+            except ValueError:
+                print("Anda keluar")
+                break
+            if input_hasil == hasil:
+                print("Jawaban anda benar")
                 return hasil
             elif input_hasil != hasil:
                 return f"Hasil salah, yang benar {hasil}"
@@ -64,7 +86,7 @@ def kuis_penjumlahan(level):
 
 
 if __name__ == "__main__":
-    print(kuis_penjumlahan("l1"))
+    print(kuis_penjumlahan("l2"))
     # plus = tambah(12, 16.9)
     # print(plus)
 
