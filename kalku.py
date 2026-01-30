@@ -25,7 +25,12 @@ def kali ():
             print("Anda memasukkan bukan Angka")
             print("***")
 
-    return list_angka            
+    return list_angka
+
+def bagi(depan: float, belakang:float):
+    "Membagi secara sederhana"
+    hasil = depan / belakang
+    return hasil
 
 if __name__ == "__main__":
     # plus = tambah(12, 16.9)
@@ -33,4 +38,5 @@ if __name__ == "__main__":
 
     # kur = kurang(11, 100)
     # print(kur)
-    print(kali())
+    # print(kali())
+    print(bagi(12, 9))
