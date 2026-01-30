@@ -34,8 +34,11 @@ def bagi(depan: float, belakang:float):
 
 # Membuat tebakan nomer random
 def kuis_penjumlahan(level):
+    """
+    Membuat kuis penjumlahan secara otomatis
+    Level 1, Level 2, Level 3, level 4
+    """
     import random
-    "Level 1, Level 2, Level 3, level 4"
     l1_depan = random.randint(0, 9)
     l1_belakang = random.randint(0, 9)
     # l2 = random.randint(10, 99)
