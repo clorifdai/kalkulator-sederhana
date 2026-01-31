@@ -1,14 +1,19 @@
-def tambah(depan: float, belakang: float):
+def tambah(bilangan_a: float, bilangan_b: float):
     """Operasi penambahan"""
-    hasil = depan + belakang
+    hasil = bilangan_a + bilangan_b
     return hasil
 
-def kurang(depan: float, belakang: float):
-    """Pengurangan"""
-    hasil = depan - belakang
+def kurang (bilangan_a: float, bilangan_b: float):
+    """Operasi pengurangan"""
+    hasil = bilangan_a - bilangan_b
     return hasil
 
-def kali ():
+def kali (bilangan_a: float, bilangan_b: float):
+    """Operasi perkalian"""
+    hasil = bilangan_a * bilangan_b
+    return hasil
+
+def kali_input ():
     """Perkalian dengan input """
     list_angka = 1
 # Perlu menambah alat pendeteksi int dan str. 
@@ -27,9 +32,9 @@ def kali ():
 
     return list_angka
 
-def bagi(depan: float, belakang:float):
-    "Membagi secara sederhana"
-    hasil = depan / belakang
+def bagi (bilangan_a: float, bilangan_b: float):
+    """Operasi pembagian"""
+    hasil = bilangan_a / bilangan_b
     return hasil
 
 # Membuat tebakan nomer random
@@ -65,7 +70,7 @@ def kuis_penjumlahan(level):
             elif input_hasil != hasil:
                 return f"Hasil salah, yang benar {hasil}"
 
-        # Ini perlu diefieisenkan, masa harus nulis blok kode 2 kali
+        # Ini perlu diefieisenkan, masa harus nulis blok kode 2 kali 
         elif level == "l2":
             print("Ketik huruf untuk keluar")
             print(l2_depan, "+", l2_belakang, "= ?")
@@ -79,18 +84,18 @@ def kuis_penjumlahan(level):
                 print("Jawaban anda benar")
                 return hasil
             elif input_hasil != hasil:
-                return f"Hasil salah, yang benar {hasil}"
+                return f"Hasil salah! Jawaban yang benar ialah \n{hasil}"
     return ""
         
 
 
 
 if __name__ == "__main__":
-    print(kuis_penjumlahan("l2"))
+    # print(kuis_penjumlahan("l2"))
     # plus = tambah(12, 16.9)
     # print(plus)
 
-    # kur = kurang(11, 100)
-    # print(kur)
+    kur = bagi(21, 1)
+    print(kur)
     # print(kali())
     # print(bagi(12, 9))
