@@ -37,8 +37,8 @@ def bagi (bilangan_a: float, bilangan_b: float):
     hasil = bilangan_a / bilangan_b
     return hasil
 
-# Membuat tebakan nomer random
-def kuis_penjumlahan(level):
+# Fungsi kuis penjumlahan sederhana
+def kuis_penjumlahan():
     """
     Membuat kuis penjumlahan secara otomatis
     1 = 1 digit
@@ -87,5 +87,5 @@ def kuis_penjumlahan(level):
 ###########
 
 if __name__ == "__main__":
-    print(kuis_penjumlahan("l1"))
+    print(kuis_penjumlahan())
     # help(kuis_penjumlahan)
