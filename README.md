@@ -6,6 +6,7 @@ Ini sebagai lahan praktekku cara menggunakan fungsi
 Aku mulai dengan aritmatika terlebih dahulu disertai dengan kuis sederhana.
 
 
+## Cara Penggunaan
 Ada kuis penjumlahan dengan 1-4 digit. 
 
 Buka terminal kemudian masuk ke folder "kalkulator-sederhana".
