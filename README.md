@@ -18,4 +18,4 @@ Kemudian buka modul/file python "kalku.py"
 python3 kalku.py
 ```
 
-Nanti muncul intruksi apa saja yang harus diinput
+Nanti muncul intruksi angka apa saja yang dapat diinput
