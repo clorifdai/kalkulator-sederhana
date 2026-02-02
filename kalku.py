@@ -89,3 +89,4 @@ def kuis_penjumlahan():
 if __name__ == "__main__":
     print(kuis_penjumlahan())
     # help(kuis_penjumlahan)
+    pass
