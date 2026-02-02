@@ -41,61 +41,51 @@ def bagi (bilangan_a: float, bilangan_b: float):
 def kuis_penjumlahan(level):
     """
     Membuat kuis penjumlahan secara otomatis
-    l1 = 1 digit,
-    l2 = 2 digit
-    l3 = 3 digit
-    l4 = 4 digit
+    1 = 1 digit
+    2 = 2 digit
+    3 = 3 digit
+    4 = 4 digit
     """
     import random
-    l1_depan = random.randint(0, 9)
-    l1_belakang = random.randint(0, 9)
-    l2_depan = random.randint(10, 99)
-    l2_belakang = random.randint(10, 99)
+    
+    level = input("Ketik 1-4 untuk menentukan jumlah digit. \nMasukkan jumlah digit: ")
 
-    # l3 = random.randint(100, 999)
-    # l4 = random.randint(1000, 9999)
     while True:
-        if level == "l1":
-            print("Ketik huruf untuk keluar")
-            print(l1_depan, "+", l1_belakang, "= ?")
-            hasil = l1_depan + l1_belakang
-            try:
-                input_hasil = int(input("Masukkan angka: "))
-            except ValueError:
-                print("Anda keluar")
-                break
-            if input_hasil == hasil:
-                print("Jawaban anda benar")
-                return hasil
-            elif input_hasil != hasil:
-                return f"Hasil salah, yang benar {hasil}"
+        if level == "1":
+            bilangan_a = random.randint(0, 9)
+            bilangan_b = random.randint(0, 9)
+        elif level == "2":
+            bilangan_a = random.randint(10, 99)
+            bilangan_b = random.randint(10, 99)
+        elif level == "3":
+            bilangan_a = random.randint(100, 999)
+            bilangan_b = random.randint(100, 999)
+        elif level == "4":
+            bilangan_a = random.randint(1000, 9999)
+            bilangan_b = random.randint(1000, 9999)    
+        else:
+            print("Masukan anda salah!")
+            return "Hanya masukkan angka 1-4"
+            
+        print("\nKetik huruf untuk keluar")
+        print(bilangan_a, "+", bilangan_b, "= ?")
+        hasil = bilangan_a + bilangan_b
+        try:
+            input_hasil = int(input("Masukkan angka: "))
+        except ValueError:
+            print("Anda Keluar")
+            break
+            
+        if input_hasil == hasil:
+            print("Jawaban anda benar")
+            print(hasil)
+        elif input_hasil != hasil:
+            print(f"Hasil salah! Yang benar {hasil}")
 
-        # Ini perlu diefieisenkan, masa harus nulis blok kode 2 kali 
-        elif level == "l2":
-            print("Ketik huruf untuk keluar")
-            print(l2_depan, "+", l2_belakang, "= ?")
-            hasil = l2_depan + l2_belakang
-            try:
-                input_hasil = int(input("Masukkan angka: "))
-            except ValueError:
-                print("Anda keluar")
-                break
-            if input_hasil == hasil:
-                print("Jawaban anda benar")
-                return hasil
-            elif input_hasil != hasil:
-                return f"Hasil salah! Jawaban yang benar ialah \n{hasil}"
     return ""
         
-
-
+###########
 
 if __name__ == "__main__":
-    # print(kuis_penjumlahan("l2"))
-    # plus = tambah(12, 16.9)
-    # print(plus)
-
-    kur = bagi(21, 1)
-    print(kur)
-    # print(kali())
-    # print(bagi(12, 9))
+    print(kuis_penjumlahan("l1"))
+    # help(kuis_penjumlahan)
