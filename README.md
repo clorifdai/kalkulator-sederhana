@@ -15,7 +15,7 @@ cd kalkulator-sederhana
 ```
 Kemudian buka modul/file python "kalku.py"
 ```bash
-python3 kalku.py
+python3 kuis_matematika.py
 ```
 
 Nanti muncul intruksi angka apa saja yang dapat diinput
