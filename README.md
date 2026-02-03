@@ -18,4 +18,4 @@ Kemudian buka modul/file python "kalku.py"
 python3 kuis_matematika.py
 ```
 
-Nanti muncul intruksi angka apa saja yang dapat diinput
+Nanti muncul instruksi angka apa saja yang dapat diinput
