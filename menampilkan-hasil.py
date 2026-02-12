@@ -5,9 +5,9 @@ waktu_sekarang = datetime.now().strftime("%Y-%m-%d %H:%M")
 waktu_tanggal_sekarang = datetime.now().strftime("%Y-%m-%d_%H%M%S")
 
 
-def kuis_penjumlahan():
+def kuis_perkalian():
     """
-    Membuat kuis penjumlahan secara otomatis
+    Membuat kuis perkalian secara otomatis
     1 = 1 digit. 0 - 9
     2 = 2 digit. 10 - 99
     3 = 3 digit. 100 - 999
@@ -16,7 +16,7 @@ def kuis_penjumlahan():
     list_hasil = []
     level = input("Ketik 1-4 untuk menentukan jumlah digit. Ketik 'help' untuk bantuan. \nMasukkan jumlah digit: ")
     if level == "help":
-        help(kuis_penjumlahan)
+        help(kuis_perkalian)
         pass
     
     while True:
@@ -51,7 +51,7 @@ def kuis_penjumlahan():
             list_hasil.append(f"{bilangan_a} + {bilangan_b} = {hasil} BENAR")
         elif input_hasil != hasil:
             print(f"Hasil salah! Yang benar {hasil}")
-            list_hasil.append(f"{bilangan_a} + {bilangan_b} = {hasil} SALAH")
+            list_hasil.append(f"{bilangan_a} + {bilangan_b} = {input_hasil} SALAH")
     # Print daftar soal yang berhasil dijawab
     # print(list_hasil)
     return list_hasil
@@ -60,6 +60,7 @@ def kuis_penjumlahan():
 #     print(list_hasil)
 
 def simpan_hasil(a):
+    "Menggunakan hasil return fungsi kuis lain lalu disimpan ke file txt"
     nama_file_jawaban =  f"jawaban_ {waktu_tanggal_sekarang}.txt"
     
     with open(nama_file_jawaban, "w") as file_jawaban:
@@ -72,6 +73,6 @@ def simpan_hasil(a):
         
 
 if __name__ == "__main__":
-    x = kuis_penjumlahan()
+    x = kuis_perkalian()
     simpan_hasil(x)
 
