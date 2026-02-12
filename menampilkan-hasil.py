@@ -1,4 +1,8 @@
 import random
+from datetime import datetime
+
+waktu_sekarang = datetime.now().strftime("%Y-%m-%d %H:%M")
+waktu_tanggal_sekarang = datetime.now().strftime("%Y-%m-%d_%H%M%S")
 
 
 def kuis_penjumlahan():
@@ -49,12 +53,25 @@ def kuis_penjumlahan():
             print(f"Hasil salah! Yang benar {hasil}")
             list_hasil.append(f"{bilangan_a} + {bilangan_b} = {hasil} SALAH")
     # Print daftar soal yang berhasil dijawab
-    print(list_hasil)
-    return None
+    # print(list_hasil)
+    return list_hasil
 
 # def tampilkan_hasil():
 #     print(list_hasil)
 
+def simpan_hasil(a):
+    nama_file_jawaban =  f"jawaban_ {waktu_tanggal_sekarang}.txt"
+    
+    with open(nama_file_jawaban, "w") as file_jawaban:
+        file_jawaban.write(f"{waktu_sekarang}\n")
+    
+    for i in a:
+        with open(nama_file_jawaban, "a") as file_jawaban:
+            file_jawaban.write(f"{i}\n")
+
+        
+
 if __name__ == "__main__":
-    kuis_penjumlahan()
+    x = kuis_penjumlahan()
+    simpan_hasil(x)
 
