@@ -45,14 +45,11 @@ def random_bilangan(level):
           
 def menghitung(listku: list):
     i = 0
-    
+    list_hasil = []
     while i < 10 :
         i += 1  
         level = listku[2]
-        # print(random_bilangan(level))
         angka_random = random_bilangan(level)
-        # print(f"{angka_random[0]} + {angka_random[1]}")
-        # print(random_bilangan(listku[-1]))
         print("\nKetik huruf untuk keluar")
         print(angka_random[0], "+", angka_random[1], "= ?")
         hasil = angka_random[0] + angka_random[1]
@@ -62,7 +59,7 @@ def menghitung(listku: list):
             print("Anda Keluar")
             break
             
-        list_hasil = []
+
         if input_hasil == hasil:
             print("Jawaban anda benar")
             print(hasil)
@@ -70,8 +67,7 @@ def menghitung(listku: list):
         elif input_hasil != hasil:
             print(f"Hasil salah! Yang benar {hasil}")
             list_hasil.append(f"{angka_random[0]} + {angka_random[1]} = {input_hasil} SALAH")
-    # Print daftar soal yang berhasil dijawab
-    # print(list_hasil)
+
     return list_hasil
 
 # Kuis pengurangan
