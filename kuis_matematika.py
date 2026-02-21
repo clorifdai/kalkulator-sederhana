@@ -50,24 +50,27 @@ def random_bilangan(level):
             print("Masukan anda salah!")
         return [bilangan_a, bilangan_b]
           
-def menghitung(listku: list):  
-    print("\nKetik huruf untuk keluar")
-    print(listku[0], "+", listku[1], "= ?")
-    hasil = listku[0] + listku[1]
-    try:
-       input_hasil = int(input("Masukkan angka: "))
-    except ValueError:
-        print("Anda Keluar")
-        # break
+def menghitung(listku: list):
+    i = 0
+    while i < 10 :
+        i += 1  
+        print("\nKetik huruf untuk keluar")
+        print(listku[0], "+", listku[1], "= ?")
+        hasil = listku[0] + listku[1]
+        try:
+            input_hasil = int(input("Masukkan angka: "))
+        except ValueError:
+            print("Anda Keluar")
+            break
             
-    list_hasil = []
-    if input_hasil == hasil:
-        print("Jawaban anda benar")
-        print(hasil)
-        list_hasil.append(f"{listku[0]} + {listku[1]} = {hasil} BENAR")
-    elif input_hasil != hasil:
-        print(f"Hasil salah! Yang benar {hasil}")
-        list_hasil.append(f"{listku[0]} + {listku[1]} = {input_hasil} SALAH")
+        list_hasil = []
+        if input_hasil == hasil:
+            print("Jawaban anda benar")
+            print(hasil)
+            list_hasil.append(f"{listku[0]} + {listku[1]} = {hasil} BENAR")
+        elif input_hasil != hasil:
+            print(f"Hasil salah! Yang benar {hasil}")
+            list_hasil.append(f"{listku[0]} + {listku[1]} = {input_hasil} SALAH")
     # Print daftar soal yang berhasil dijawab
     # print(list_hasil)
     return list_hasil
