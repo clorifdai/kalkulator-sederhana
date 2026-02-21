@@ -9,7 +9,7 @@ from datetime import datetime
 waktu_sekarang = datetime.now().strftime("%Y-%m-%d %H:%M")
 waktu_tanggal_sekarang = datetime.now().strftime("%Y-%m-%d_%H%M%S")
 
-
+# fungsi input penjumlahan
 def kuis_penjumlahan():
     """
     Membuat kuis penjumlahan secara otomatis
@@ -18,14 +18,23 @@ def kuis_penjumlahan():
     3 = 3 digit. 100 - 999
     4 = 4 digit. 1000 - 9999
     """
-    list_hasil = []
+#     input angka
     level = input("Ketik 1-4 untuk menentukan jumlah digit. Ketik 'help' untuk bantuan. \nMasukkan jumlah digit: ")
+#     If input sama dengan help
     if level == "help":
+#         menampilkan docstring
         help(kuis_penjumlahan)
         pass
-    
+#     return input angka
+    return level
+
+# fungsi membuat random dengan parameter dari fungsi penjumlahan
+def random_bilangan(level):
+# while loop pakai true
     while True:
+#     if input angka sama dengan n digit 
         if level == "1":
+#         maka buat 2 variabel dgn n digit random. 
             bilangan_a = random.randint(0, 9)
             bilangan_b = random.randint(0, 9)
         elif level == "2":
@@ -39,24 +48,26 @@ def kuis_penjumlahan():
             bilangan_b = random.randint(1000, 9999)    
         else:
             print("Masukan anda salah!")
-            return "Hanya masukkan angka 1-4"
+        return [bilangan_a, bilangan_b]
+          
+def menghitung(listku: list):  
+    print("\nKetik huruf untuk keluar")
+    print(listku[0], "+", listku[1], "= ?")
+    hasil = listku[0] + listku[1]
+    try:
+       input_hasil = int(input("Masukkan angka: "))
+    except ValueError:
+        print("Anda Keluar")
+        # break
             
-        print("\nKetik huruf untuk keluar")
-        print(bilangan_a, "+", bilangan_b, "= ?")
-        hasil = bilangan_a + bilangan_b
-        try:
-            input_hasil = int(input("Masukkan angka: "))
-        except ValueError:
-            print("Anda Keluar")
-            break
-            
-        if input_hasil == hasil:
-            print("Jawaban anda benar")
-            print(hasil)
-            list_hasil.append(f"{bilangan_a} + {bilangan_b} = {hasil} BENAR")
-        elif input_hasil != hasil:
-            print(f"Hasil salah! Yang benar {hasil}")
-            list_hasil.append(f"{bilangan_a} + {bilangan_b} = {input_hasil} SALAH")
+    list_hasil = []
+    if input_hasil == hasil:
+        print("Jawaban anda benar")
+        print(hasil)
+        list_hasil.append(f"{listku[0]} + {listku[1]} = {hasil} BENAR")
+    elif input_hasil != hasil:
+        print(f"Hasil salah! Yang benar {hasil}")
+        list_hasil.append(f"{listku[0]} + {listku[1]} = {input_hasil} SALAH")
     # Print daftar soal yang berhasil dijawab
     # print(list_hasil)
     return list_hasil
@@ -250,6 +261,8 @@ def simpan_hasil(daftar_jawaban: list):  # noqa: F811
 #######
 
 if __name__ == "__main__":
-    x = kuis_pembagian()
-    simpan_hasil(x)
+    kuis = kuis_penjumlahan()
+    rand_ = random_bilangan(kuis)
+    list_hasil = menghitung(rand_)
+    simpan_hasil(list_hasil)
 
