@@ -48,11 +48,14 @@ def menghitung(listku: list):
     
     while i < 10 :
         i += 1  
-        random_bilangan("4")
+        level = listku[2]
+        # print(random_bilangan(level))
+        angka_random = random_bilangan(level)
+        # print(f"{angka_random[0]} + {angka_random[1]}")
         # print(random_bilangan(listku[-1]))
         print("\nKetik huruf untuk keluar")
-        print(listku[0], "+", listku[1], "= ?")
-        hasil = listku[0] + listku[1]
+        print(angka_random[0], "+", angka_random[1], "= ?")
+        hasil = angka_random[0] + angka_random[1]
         try:
             input_hasil = int(input("Masukkan angka: "))
         except ValueError:
@@ -63,10 +66,10 @@ def menghitung(listku: list):
         if input_hasil == hasil:
             print("Jawaban anda benar")
             print(hasil)
-            list_hasil.append(f"{listku[0]} + {listku[1]} = {hasil} BENAR")
+            list_hasil.append(f"{angka_random[0]} + {angka_random[1]} = {hasil} BENAR")
         elif input_hasil != hasil:
             print(f"Hasil salah! Yang benar {hasil}")
-            list_hasil.append(f"{listku[0]} + {listku[1]} = {input_hasil} SALAH")
+            list_hasil.append(f"{angka_random[0]} + {angka_random[1]} = {input_hasil} SALAH")
     # Print daftar soal yang berhasil dijawab
     # print(list_hasil)
     return list_hasil
@@ -256,7 +259,6 @@ def simpan_hasil(daftar_jawaban: list):  # noqa: F811
     for jawaban in daftar_jawaban:
         with open(nama_file_jawaban, "a") as file_jawaban:
             file_jawaban.write(f"{jawaban}\n")
-
 #######
 
 if __name__ == "__main__":
