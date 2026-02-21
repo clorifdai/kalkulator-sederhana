@@ -10,6 +10,7 @@ waktu_sekarang = datetime.now().strftime("%Y-%m-%d %H:%M")
 waktu_tanggal_sekarang = datetime.now().strftime("%Y-%m-%d_%H%M%S")
 
 # fungsi input penjumlahan
+
 def kuis_penjumlahan():
     """
     Membuat kuis penjumlahan secara otomatis
@@ -18,23 +19,15 @@ def kuis_penjumlahan():
     3 = 3 digit. 100 - 999
     4 = 4 digit. 1000 - 9999
     """
-#     input angka
     level = input("Ketik 1-4 untuk menentukan jumlah digit. Ketik 'help' untuk bantuan. \nMasukkan jumlah digit: ")
-#     If input sama dengan help
     if level == "help":
-#         menampilkan docstring
         help(kuis_penjumlahan)
         pass
-#     return input angka
     return level
 
-# fungsi membuat random dengan parameter dari fungsi penjumlahan
 def random_bilangan(level):
-# while loop pakai true
     while True:
-#     if input angka sama dengan n digit 
         if level == "1":
-#         maka buat 2 variabel dgn n digit random. 
             bilangan_a = random.randint(0, 9)
             bilangan_b = random.randint(0, 9)
         elif level == "2":
@@ -48,12 +41,15 @@ def random_bilangan(level):
             bilangan_b = random.randint(1000, 9999)    
         else:
             print("Masukan anda salah!")
-        return [bilangan_a, bilangan_b]
+        return [bilangan_a, bilangan_b, level]
           
 def menghitung(listku: list):
     i = 0
+    
     while i < 10 :
         i += 1  
+        random_bilangan("4")
+        # print(random_bilangan(listku[-1]))
         print("\nKetik huruf untuk keluar")
         print(listku[0], "+", listku[1], "= ?")
         hasil = listku[0] + listku[1]
